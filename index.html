@@ -78,10 +78,19 @@
         cart = [];
     };
 
+    //count all items in cart
+    countCart = function () {
+       var totalCount = 0;
+       for(var i in cart){
+           totalCount += cart[i].count;
+       }
+       return totalCount;
+    };
+
     addItemToCart('Apple', 1.23, 3);
 
     addItemToCart('Pear', 1.45, 4);
-
+   
     console.log(cart);
 
 </script>
