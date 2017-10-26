@@ -80,18 +80,29 @@
 
     //count all items in cart
     countCart = function () {
-       var totalCount = 0;
-       for(var i in cart){
-           totalCount += cart[i].count;
-       }
-       return totalCount;
+        var totalCount = 0;
+        for (var i in cart) {
+            totalCount += cart[i].count;
+        }
+        return totalCount;
     };
-
+    //total cost of items
+    totalCost = function () {
+        var totalCost = 0;
+        for (var i in cart) {
+            totalCost += cart[i].price;
+        }
+        return totalCost.toFixed(2);
+    };
     addItemToCart('Apple', 1.23, 3);
+    addItemToCart('Apple', 33.23, 3);
+    addItemToCart('Apple', 142.23, 3);
 
     addItemToCart('Pear', 1.45, 4);
-   
-    console.log(cart);
+    addItemToCart('Pear', 33, 4);
+    addItemToCart('Pear', 1123.89, 4);
+
+    console.log(totalCost());
 
 </script>
 </body>
