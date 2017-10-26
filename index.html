@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="shopping-cart.css">
+
+</head>
+<body>
+<div class="container">
+    <h3>Shopping Cart</h3>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+     var cart = [];
+     var Item = function (name,price,count) {
+         this.name = name;
+         this.price = price;
+         this.count = count;
+     };
+
+     //add item to cart
+    addItemToCart = function (name,price,count) {
+
+        for(var i in cart) {
+            if(cart[i].name === name){
+                if(cart[i].price === price){
+                    cart[i].count += count;
+                    return;
+                }
+            }
+        }
+        var item = new Item(name,price,count);
+        cart.push(item);
+    };
+//
+//    addItemToCart('Apple',2,1);
+//    addItemToCart('Test',3.08,3);
+
+
+
+//    addItemToCart('Apple',3,1);
+//    addItemToCart('Apple',3.12,1);
+//    addItemToCart('Apple',3.12,1);
+
+//    addItemToCart('Bananas',3.56,2);
+    console.log(cart);
+//    removeItemFromCart = function (item) {
+//
+//    };
+//
+//    clearCart = function () {
+//
+//    };
+//
+//    countCart = function () {
+//
+//    };
+//
+//    totalCart = function () {
+//
+//    };
+//
+//    listCart = function () {
+//
+//    };
+//
+//    saveCart = function () {
+//
+//    };
+//
+//    loadCart = function () {
+//
+//    };
+
+
+</script>
+</body>
+</html>
