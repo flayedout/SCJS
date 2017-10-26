@@ -47,8 +47,26 @@
         var item = new Item(name,price,count);
         cart.push(item);
     };
+
+    removeItemFromCart = function (name) {
+        for(var i in cart){
+            if(cart[i].name === name){
+                cart[i].count-=1;
+                if(cart[i].count === 0){
+                    cart.splice(i,1);
+                }
+                break;
+            }
+        }
+    };
 //
-//    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+    addItemToCart('Apple',2,1);
+
 //    addItemToCart('Test',3.08,3);
 
 
