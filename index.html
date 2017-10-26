@@ -49,6 +49,7 @@
         }
         var item = new Item(name, price, count);
         cart.push(item);
+        saveCart();
     };
 
     //remove item from cart
@@ -62,6 +63,7 @@
                 break;
             }
         }
+        saveCart();
     };
     //remove an item from entire cart
     removeItemFromEntireCart = function (name) {
@@ -76,6 +78,7 @@
     //clear cart
     clearCart = function () {
         cart = [];
+        saveCart();
     };
 
     //count all items in cart
@@ -107,6 +110,11 @@
             cartCopy.push(itemCopy);
         }
         return cartCopy;
+    };
+
+    //save cart method to local storage
+    saveCart = function () {
+        localStorage.setItem("shoppingCart",JSON.stringify(cart));
     };
 
     addItemToCart('Apple', 1.23, 3);
